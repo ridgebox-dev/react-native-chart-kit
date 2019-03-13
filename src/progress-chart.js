@@ -65,7 +65,7 @@ class ProgressChart extends AbstractChart {
             ry={borderRadius}
             fill="url(#backgroundGradient)"/>
           <G
-            x={this.props.width / 2.5}
+            x={this.props.width / 2}
             y={this.props.height / 2}
           >
             <G>
@@ -92,36 +92,6 @@ class ProgressChart extends AbstractChart {
                   stroke={this.props.chartConfig.color((i / pies.length * 0.5) + 0.5)}
 
                 />)
-            })}
-            </G>
-            <G>
-            {pies.map((_, i) => {
-              return (
-                <Rect
-                  key={Math.random()}
-                  width="16px"
-                  height="16px"
-                  fill={this.props.chartConfig.color(0.2 * (i + 1))}
-                  rx={8}
-                  ry={8}
-                  x={(this.props.width / 2.5) - 24}
-                  y={-(this.props.height / 2.5) + ((this.props.height * 0.8) / this.props.data.length * i) + 12}
-                />
-              )
-            })}
-            </G>
-            <G>
-            {pies.map((_, i) => {
-              return (
-                <Text
-                  key={Math.random()}
-                  fill={this.props.chartConfig.color(0.5)}
-                  fontSize="11"
-                  x={this.props.width / 2.5}
-                  y={-(this.props.height / 2.5) + ((this.props.height * 0.8) / this.props.data.length * i) + 12*2}
-                >
-                  {Math.round(100 * this.props.data[i]) + '%'}
-                </Text>)
             })}
             </G>
           </G>
